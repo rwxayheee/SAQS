@@ -1,0 +1,5 @@
+ATOM C.3
+CONN H 1
+CONN H 1
+CONN N.4 1
+CONN C.ar 1
