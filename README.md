@@ -6,7 +6,7 @@ I made this convenient function (Selector, in main.py) to find a single atom fro
 
 ## Dependency
 
-Despite a regular python3 interpreter, the only dependency of this function is numpy module. 
+Python3, numpy. 
 
 
 ## Inputs
