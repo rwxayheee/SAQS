@@ -23,6 +23,7 @@ The Selector function currently takes simple query that includes atom type (of t
 
 
 ## Expected outcome
+
 The expected outcome is the coordinates of the hit atoms and will be saved to a CSV file. 
 
 If multiple hits exist, all of them will be returned and each in new a row. 
@@ -30,6 +31,10 @@ If multiple hits exist, all of them will be returned and each in new a row.
 
 ## Comments and possible improvements
 
-I used to hard-code the chemical features when looking for tatoms of interest in my own docking analysis. I was hoping other members in my lab can do the same without having to code it themselves. Thus, I made the Selector works for simple but general specification of atom type and bond type. 
+I used to hard-code the chemical features when looking for atoms of interest in my own docking analysis. I was hoping other members in my lab could do the same without having to code it themselves. Thus, I made the Selector works for simple but general specification of atom type and bond type. 
 
-There can be (and in many cases there need to be) more complicated queries, for example, to select one of the two amine groups on a benzene ring. To distinguish the two, we must either (1) establish a numbering rule that works consistently for all compounds in our library, or, (2) find where the difference occurs down the chain of bonded atoms. Some of the graph-based methods might be useful in doing that.  
+There can be (and in many cases there need to be) more complicated queries, for example, to select one of the two amine groups on a benzene ring. To distinguish the two, we must either:
+
+(1) establish a numbering rule that works consistently for all compounds in our library, or, 
+
+(2) find where the difference occurs down the chain of bonded atoms. Some of the graph-based methods such as counting the shortest distance between two nodes might be useful.  
