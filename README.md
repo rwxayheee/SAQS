@@ -19,7 +19,7 @@ Instead of using the SMILES/SMARTS description (which often times does not corre
 
 2. A query file
 
-The Selector function current takes simple query that includes atom type (of the target and bonded atoms) and bond type. 
+The Selector function currently takes simple query that includes atom type (of the target and bonded atoms) and bond type. 
 
 
 ## Expected outcome
