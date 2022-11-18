@@ -15,7 +15,7 @@ The Selector function requires two inputs:
 
 1. A MOL2 file
 
-Instead of using the SMILES/SMARTS description (which sometimes does not corrrespond to the permutation of ligand atoms in an <i>output</i> structure file), I made it read the topology information from the bond section of the MOL2 file and store as a graph. 
+Instead of using the SMILES/SMARTS description (which sometimes does not corrrespond to the permutation of ligand atoms in the output structure file), I made it read the topology information from the bond section of the MOL2 file and store as a graph. 
 
 2. A query file
 

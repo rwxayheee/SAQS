@@ -2,7 +2,7 @@
 # Single Atom Query Selector
 
 from mol2parser import *
-from query import Query
+from auxclass import Query
 import csv
 
 
@@ -35,9 +35,9 @@ def Selector(mol2mol,query):
     return sel2
 
 
-def main(qfile,mol2file):
+def main(qfile,mol2file,ofile):
     myquery = parsequery(qfile)
-    with open('selatom.csv', 'w', newline='') as csvfile:
+    with open(ofile, 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile, delimiter=',')
         for pose in splitmol2(mol2file):
             sel_atom = Selector(pose,myquery)
@@ -46,4 +46,4 @@ def main(qfile,mol2file):
 
 
 if __name__ == '__main__':
-    main('query-bisamine.txt','dock-bisamine.mol2')
+    main('query.txt','dock.mol2','output.csv')

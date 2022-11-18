@@ -1,9 +1,8 @@
-# 10/03/2022 8:47PM
-# Class Molgraph for bonds from Tripos MOL2 files
+# 10/03/2022 7:51PM
+# MolGraph, Query
 
 # graph class from https://medium.com/geekculture/how-to-represent-a-graph-data-structure-in-python-9f0df57e33a2
 # undirected, weighted graph
-
 
 class MolGraph:
 
@@ -28,3 +27,23 @@ class MolGraph:
 
     def returnbonds(self,a):
         return self.graph[a.AtInd]
+
+
+# expected query
+# ATOM C.2
+# CONN H 1
+# CONN C.3 1
+# CONN O.2 2
+
+class Query:
+
+    def __init__(self, specs):
+        self.atype = ''
+        self.bonded = []
+        for line in specs:
+            if len(line.split()) > 0:
+                items = line.split()
+                if items[0] == 'ATOM':
+                    self.atype = items[1]
+                if items[0] == 'CONN':
+                    self.bonded.append((items[1],items[2]))

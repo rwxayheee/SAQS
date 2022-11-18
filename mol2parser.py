@@ -1,9 +1,8 @@
 # 10/03/2022 6:47PM
 # Parsing Tripos MOL2 files generated from MOE Dock (io_trps.svl 2020.11)
 
-from classatom import Atom
-from classbond import Bond
-from molgraph import MolGraph
+from mol2molclass import Atom, Bond
+from auxclass import MolGraph
 
 
 class Pose:
