@@ -46,4 +46,4 @@ def main(qfile,mol2file,ofile):
 
 
 if __name__ == '__main__':
-    main('query.txt','dock.mol2','output.csv')
+    main('example/query-aldehyde.txt','example/dock-aldehyde.mol2','example/output-aldehyde.csv')
