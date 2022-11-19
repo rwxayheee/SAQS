@@ -34,6 +34,7 @@ If multiple hits exist, all of them will be returned and each in new a row.
 python3 io.py -q query.txt -m dock.mol2 -o output.csv
 
 Options: -s/--scores Write scores
+
          -a/--all Write all properties
 
 
