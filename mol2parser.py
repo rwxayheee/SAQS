@@ -10,7 +10,7 @@ class Pose:
     def __init__(self, mol2block):
         self.datablock = mol2block
 
-        self.atomblock = mol2block[mol2block.index('@<TRIPOS>ATOM\n') + 1:\
+        self.atomblock = mol2block[mol2block.index('@<TRIPOS>ATOM\n') + 1: \
                                    mol2block.index('@<TRIPOS>BOND\n')]
         self.atoms = []
         for line in self.atomblock:
@@ -21,7 +21,7 @@ class Pose:
             atom_dic[atom.AtInd] = atom
         self.atomdic = atom_dic
 
-        self.bondblock = mol2block[mol2block.index('@<TRIPOS>BOND\n') + 1:\
+        self.bondblock = mol2block[mol2block.index('@<TRIPOS>BOND\n') + 1: \
                                    mol2block.index('@<TRIPOS>SUBSTRUCTURE\n')]
         self.bonds = []
         for line in self.bondblock:
@@ -34,10 +34,11 @@ class Pose:
             if '\t|\t' in line:
                 items = line.split('\t|\t')
                 if len(items) > 1:
+                    propval = items[1].replace('\n','')
                     try:
-                        propval = float(items[1])
+                        propval = float(propval)
                     except:
-                        propval = str(items[1])
+                        propval = str(propval)
                     prop_dic[items[0]] = propval
                 else:
                     prop_dic[items[0]] = ''
@@ -47,7 +48,6 @@ class Pose:
 
 
 def splitmol2(mol2file):
-
     with open(mol2file, 'r') as f:
         datalines = f.readlines()
 

@@ -69,10 +69,7 @@ def main():
         for pose in pose_list:
             pose_propvals = []
             for val in pose.propertydic.values():
-                if np.isnan(np.nan):
-                    pose_propvals.extend([''])
-                else:
-                    pose_propvals.extend([val])
+                pose_propvals.extend([val])
             pose_score = [pose.propertydic["S"]]
             sel_atom = Selector(pose, myquery)
 
