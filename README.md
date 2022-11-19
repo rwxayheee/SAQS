@@ -31,10 +31,15 @@ If multiple hits exist, all of them will be returned and each in new a row.
 
 ## Usage of io.py
 
+```
 python3 io.py -q query.txt -m dock.mol2 -o output.csv
+```
 
-Options: -s/--scores Write scores
-         -a/--all Write all properties
+Options: -s Write scores; -a Write all properties
+
+```
+python3 io.py -q query.txt -m dock.mol2 -o output.csv -s
+```
 
 
 ## Comments and possible improvements
