@@ -66,7 +66,7 @@ def main():
                 header = ["x", "y", "z"]
         csvwriter.writerow(header)
 
-        for pose in pose_list:
+        for pose in pose_list[:3]:
             pose_propvals = []
             for val in pose.propertydic.values():
                 if type(val)==list and len(val)==1:
@@ -81,16 +81,17 @@ def main():
             else:
                 sele_coord = []
                 for atom in sel_atom:
-                    if write_all:
-                        row = pose_propvals
-                        row.extend(atom.AtCoord)
+                    sele_coord.append(atom.AtCoord)
+
+            for coord in sele_coord:
+                coord = [str(x) for x in coord]
+                if write_all:
+                    csvwriter.writerow(pose_propvals+coord)
+                else:
+                    if write_scores:
+                        csvwriter.writerow(pose_score+coord)
                     else:
-                        if write_scores:
-                            row = pose_score
-                            row.extend(atom.AtCoord)
-                        else:
-                            row = atom.AtCoord
-                    csvwriter.writerow(row)
+                        csvwriter.writerow(coord)
 
 
 if __name__ == "__main__":
