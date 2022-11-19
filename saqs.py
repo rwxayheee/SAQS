@@ -29,6 +29,8 @@ def Selector(mol2mol,query):
         for conn in query.bonded:
             if conn not in abtypelist:
                 flag = flag*0
+            else:
+                abtypelist.remove(conn)
         if flag==1:
             sel2.append(atom)
 
