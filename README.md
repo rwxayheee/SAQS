@@ -29,6 +29,14 @@ The expected outcome is the coordinates of the hit atoms and will be saved to a 
 If multiple hits exist, all of them will be returned and each in new a row. 
 
 
+## Usage of io.py
+
+python3 io.py -q query.txt -m dock.mol2 -o output.csv
+
+Options: -s/--scores Write scores
+         -a/--all Write all properties
+
+
 ## Comments and possible improvements
 
 I used to hard-code the chemical features when looking for atoms of interest in my own docking analysis. I was hoping other members in my lab could do the same without having to code it themselves. Thus, I made the Selector works for simple but general specification of atom type and bond type. 
