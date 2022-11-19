@@ -67,7 +67,12 @@ def main():
         csvwriter.writerow(header)
 
         for pose in pose_list:
-            pose_propvals = [x[0] for x in pose.propertydic.values()]
+            pose_propvals = []
+            for val in pose.propertydic.values():
+                if len(val) == 0:
+                    pose_propvals.extend([''])
+                else:
+                    pose_propvals.extend(val[0])
             pose_score = pose.propertydic["S"]
             sel_atom = Selector(pose, myquery)
 
