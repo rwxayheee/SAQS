@@ -66,7 +66,7 @@ def main():
                 header = ["x", "y", "z"]
         csvwriter.writerow(header)
 
-        for pose in pose_list[:3]:
+        for pose in pose_list:
             pose_propvals = []
             for val in pose.propertydic.values():
                 if type(val)==list and len(val)==1:
