@@ -81,19 +81,16 @@ def main():
             else:
                 sele_coord = []
                 for atom in sel_atom:
-                    sele_coord.append([x for x in atom.AtCoord])
-
-            for coordarray in sele_coord:
-                if write_all:
-                    row = pose_propvals
-                    row.extend(coordarray)
-                else:
-                    if write_scores:
-                        row = pose_score
-                        row.extend(coordarray)
+                    if write_all:
+                        row = pose_propvals
+                        row.extend(atom.AtCoord)
                     else:
-                        row = coordarray
-                csvwriter.writerow(row)
+                        if write_scores:
+                            row = pose_score
+                            row.extend(atom.AtCoord)
+                        else:
+                            row = atom.AtCoord
+                    csvwriter.writerow(row)
 
 
 if __name__ == "__main__":
