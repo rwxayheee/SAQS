@@ -42,7 +42,7 @@ def main(qfile,mol2file,ofile):
         for pose in splitmol2(mol2file):
             sel_atom = Selector(pose,myquery)
             for atom in sel_atom:
-                csvwriter.writerow(atom.AtCoord)
+                csvwriter.writerow(atom.AtCoord) # writes plain atomic coords
 
 
 if __name__ == '__main__':
