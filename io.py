@@ -72,7 +72,7 @@ def main():
                 if len(val) == 0:
                     pose_propvals.extend([''])
                 else:
-                    pose_propvals.extend(val[0])
+                    pose_propvals.extend(val)
             pose_score = pose.propertydic["S"]
             sel_atom = Selector(pose, myquery)
 
