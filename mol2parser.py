@@ -38,7 +38,7 @@ class Pose:
                         propval = float(items[1])
                     except:
                         propval = str(items[1])
-                    prop_dic[items[0]] = items[1]
+                    prop_dic[items[0]] = propval
                 else:
                     prop_dic[items[0]] = ''
         self.propertydic = prop_dic
