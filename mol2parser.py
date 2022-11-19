@@ -34,7 +34,11 @@ class Pose:
             if '\t|\t' in line:
                 items = line.split('\t|\t')
                 if len(items) > 1:
-                    prop_dic[items[0]] = ','.join(items[1])
+                    try:
+                        propval = float(items[1])
+                    except:
+                        propval = str(items[1])
+                    prop_dic[items[0]] = items[1]
                 else:
                     prop_dic[items[0]] = ''
         self.propertydic = prop_dic
